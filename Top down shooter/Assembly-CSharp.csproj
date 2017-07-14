@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\Billboard.cs" />
      <Compile Include="Assets\Scripts\Bullet.cs" />
      <Compile Include="Assets\Scripts\CameraController.cs" />
+     <Compile Include="Assets\Scripts\DespawnParticlesOnStop.cs" />
      <Compile Include="Assets\Scripts\DestoryOnContact.cs" />
      <Compile Include="Assets\Scripts\Editor scripts\FieldOfViewEditor.cs" />
      <Compile Include="Assets\Scripts\EnemyController.cs" />
