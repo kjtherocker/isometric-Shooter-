@@ -40,8 +40,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1932125565722470}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -4}
-  m_LocalScale: {x: 0.5, y: 1, z: 0.5}
+  m_LocalPosition: {x: -1.1, y: 0, z: -5.26}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -158,3 +158,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 5120
   Score: 0
+  gunShot_Shot: {fileID: 1024402263182322, guid: 4d15917af4a5bc64a84e9b151781cb23,
+    type: 2}
+  gunShot_Impact: {fileID: 1121530034850814, guid: 451ca8445c33dcc438c691f0240e3efc,
+    type: 2}
+  brokenBarrel: {fileID: 1353806466879810, guid: 83f44b04cfd631b45abf809c79970d5c,
+    type: 2}

@@ -9,20 +9,18 @@ public class CameraController : MonoBehaviour
 
     void Start()
     {
-        offset = transform.position - player.transform.position;
+        offset = player.transform.position - transform.position;
     }
 
 
     void LateUpdate()
     {
+        offset = player.transform.position - transform.position;
         if (player != null)
         {
-            transform.position = player.transform.position + offset;
-
-        }
-        else
-        {
-
+            Vector3 movement = new Vector3(offset.x * Time.deltaTime * 4, 100 - transform.position.y, offset.z * Time.deltaTime * 4);
+            
+            transform.position += movement;
         }
     }
 }

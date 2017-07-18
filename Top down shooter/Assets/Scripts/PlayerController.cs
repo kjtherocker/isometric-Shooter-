@@ -14,7 +14,12 @@ public class PlayerController : MonoBehaviour
     private Camera mainCamera;
     private Vector3 moveInput;
     private Vector3 moveVelocity;
-    
+
+    public GameObject gunShot_Shot;
+    public GameObject gunShot_Impact;
+
+    public GameObject brokenBarrel;
+
 
 
     private void Start()
@@ -54,19 +59,30 @@ public class PlayerController : MonoBehaviour
             Ray Gun = new Ray(transform.position , transform.forward);
             RaycastHit hitInfo;
 
-            if (Physics.Raycast(Gun, out hitInfo, 100, targetMask))
+            if (Physics.Raycast(Gun, out hitInfo, 100))
             {
                 Debug.DrawLine(Gun.origin, hitInfo.point, Color.red);
-                var health = hitInfo.collider.GetComponent<Health>();
-                if (health != null)
+
+                //Particles on impact
+                GameObject go = Instantiate(gunShot_Impact);
+                go.transform.position = hitInfo.point;
+                go.transform.LookAt(transform);
+
+                if (hitInfo.collider.CompareTag("Barrel"))
                 {
-                    health.TakeDamage(10);
-                    Score += 100 ;
-                    SetCountText();
+                    Destroy(hitInfo.collider.gameObject);
+                    Instantiate(brokenBarrel, hitInfo.collider.transform);
                 }
-                else
+
+                if (Physics.Raycast(Gun, out hitInfo, 100, targetMask))
                 {
-                  
+                    var health = hitInfo.collider.GetComponent<Health>();
+                    if (health != null)
+                    {
+                        health.TakeDamage(10);
+                        Score += 100;
+                        SetCountText();
+                    }
                 }
 
               
@@ -81,6 +97,12 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
+            //Particles on shoot
+            if(!Fire)
+            {
+                Instantiate(gunShot_Shot, transform);
+            }
+
             Fire = true;
         }
         else
