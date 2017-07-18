@@ -83,7 +83,8 @@
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\DestoryOnContact.cs" />
     <Compile Include="Assets\Scripts\Editor scripts\FieldOfViewEditor.cs" />
-    <Compile Include="Assets\Scripts\EnemyController.cs" />
+    <Compile Include="Assets\Scripts\EnemyControllerCruiser.cs" />
+    <Compile Include="Assets\Scripts\EnemyControllerSpiderMine.cs" />
     <Compile Include="Assets\Scripts\EnemyControllerTurret.cs" />
     <Compile Include="Assets\Scripts\FieldOfView.cs" />
     <Compile Include="Assets\Scripts\Health.cs" />
